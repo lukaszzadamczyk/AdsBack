@@ -2,7 +2,8 @@ import express, {json} from 'express';
 import cors from 'cors';
 import 'express-async-errors';
 import rateLimit from "express-rate-limit";
-import {handleError, ValidationError} from "./utils/errors";
+import {handleError} from "./utils/errors";
+import {adRouter} from "./routers/ad.router";
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(cors({
 }));
 app.use(json());
 app.use(limiter);
+
+app.use('/ad', adRouter);
 
 app.use(handleError);
 
