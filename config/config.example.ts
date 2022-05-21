@@ -4,5 +4,6 @@ export const config = {
   password: 'password',
   user: 'user',
   database: 'database',
+  corsOrigin: 'http://localhost:3000',
 };
  */
